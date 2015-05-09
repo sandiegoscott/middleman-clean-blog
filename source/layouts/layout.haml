@@ -1,0 +1,14 @@
+!!!
+/[if IE 8] <html lang="en" class="ie8">
+/[if IE 9] <html lang="en" class="ie9">
+/ [if !IE]><!
+%html{:lang => "en"}
+  / <![endif]
+  = partial "head"
+  %body.home-page
+    .wrapper
+      = partial "header"
+      = yield
+      = partial "footer"
+    / Javascript
+    = partial "javascript"
