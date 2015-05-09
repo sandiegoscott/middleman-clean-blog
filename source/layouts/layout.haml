@@ -4,11 +4,13 @@
 / [if !IE]><!
 %html{:lang => "en"}
   / <![endif]
-  = partial "head"
-  %body.home-page
-    .wrapper
-      = partial "header"
-      = yield
-      = partial "footer"
-    / Javascript
-    = partial "javascript"
+  %head
+    = partial "partial/head"
+  %body
+    = partial "partial/navigation"
+    = partial "partial/header"
+    = yield
+    %hr/
+    = partial "partial/footer"
+  / Javascript
+  = partial "partial/javascript"
