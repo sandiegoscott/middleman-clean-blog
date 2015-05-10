@@ -1,0 +1,41 @@
+---
+pageable: true
+---
+- @page = "blog"
+
+.blog.container
+  %h2.title
+    Archive for
+    - case page_type
+    - when 'day'
+      = Date.new(year, month, day).strftime('%b %e %Y')
+    - when 'month'
+      = Date.new(year, month, 1).strftime('%b %Y')
+    - when 'year'
+      = year
+  .row
+    #blog-list.blog-list.section.col-md-8.col-sm-8.col-xs-12
+      - if paginate && num_pages > 1
+        %p
+          Page #{page_number} of #{num_pages}
+        - if prev_page
+          %p= link_to 'Previous page', prev_page
+      - page_articles.each_with_index do |article, i|
+        %article.post
+          .content
+            %h3.post-title
+              = article.title
+            .meta
+              %ul.meta-list.list-inline
+                %li.post-time.post_date.date.updated
+                  = article.date.strftime('%b %e, %Y')
+                %li.post-author
+                  by
+                  %a{:href => "#"} Scott Olmsted
+              %a.read-more
+                = link_to('Read more', article)
+                %i.fa.fa-long-arrow-right
+      - if paginate
+        - if next_page
+          %p= link_to 'Next page', next_page
+    = partial "blog_aside"

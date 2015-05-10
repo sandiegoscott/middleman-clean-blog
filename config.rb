@@ -1,3 +1,35 @@
+
+# Blog settings
+
+set :haml, :format => :html5
+
+activate :blog do |blog|
+  blog.prefix = "blog"  # Adds a prefix to all links, template references and source paths
+
+  blog.permalink = "{year}-{month}-{day}-{title}.html"  # Matcher for blog source files
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.taglink = "tags/{tag}.html"
+  blog.layout = "blog_single"
+  # blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
+  blog.year_link = "{year}.html"
+  blog.month_link = "{year}/{month}.html"
+  blog.day_link = "{year}/{month}/{day}.html"
+  blog.default_extension = ".markdown"
+
+  blog.tag_template = "tag.html"
+  blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "page/{num}"
+end
+
+# Markdown
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+
 ###
 # Compass
 ###
@@ -41,17 +73,22 @@
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
+helpers do
 #   def some_helper
 #     "Helping"
 #   end
-# end
 
-set :css_dir, 'stylesheets'
+    def find_author(author_slug)
+      author_slug = author_slug.downcase
+      result = data.authors.select {|author| author.keys.first == author_slug }
+      raise ArgumentError unless result.any?
+      result.first
+    end
+end
 
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+set :css_dir, 'css'
+set :js_dir, 'js'
+set :images_dir, 'img'
 
 # Build-specific configuration
 configure :build do
@@ -69,4 +106,13 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+# Copy .s3deploy.yml to /build
+# http://stackoverflow.com/questions/23879068/middleman-run-custom-action-after-build
+after_build do |builder|
+  src = File.join(config[:source],".s3deploy.yml")
+  dst = File.join(config[:build_dir],".s3deploy.yml")
+  builder.source_paths << File.dirname(__FILE__)
+  builder.copy_file(src,dst)
 end
