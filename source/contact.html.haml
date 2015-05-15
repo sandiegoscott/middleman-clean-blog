@@ -1,121 +1,43 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title Clean Blog - Contact
-    / Bootstrap Core CSS
-    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
-    / Custom CSS
-    %link{:href => "css/clean-blog.min.css", :rel => "stylesheet"}/
-    / Custom Fonts
-    %link{:href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800", :rel => "stylesheet", :type => "text/css"}/
-    / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    / WARNING: Respond.js doesn't work if you view the page via file://
-    /[if lt IE 9]
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  %body
-    / Navigation
-    %nav.navbar.navbar-default.navbar-custom.navbar-fixed-top
-      .container-fluid
-        / Brand and toggle get grouped for better mobile display
-        .navbar-header.page-scroll
-          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "index.html"} Start Bootstrap
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "index.html"} Home
-            %li
-              %a{:href => "about.html"} About
-            %li
-              %a{:href => "post.html"} Sample Post
-            %li
-              %a{:href => "contact.html"} Contact
-        / /.navbar-collapse
-      / /.container
-    / Page Header
-    / Set your background image for this header on the line below.
-    %header.intro-header{:style => "background-image: url('img/contact-bg.jpg')"}
-      .container
+%header.intro-header{:style => "background-image: url('img/contact-bg.jpg')"}
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .page-heading
+          %h1 Contact Me
+          %hr.small/
+          %span.subheading Have questions? I have answers (maybe).
+/ Main Content
+.container
+  .row
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      %p Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!
+      / Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work.
+      / WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address!
+      / NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally!
+      %form#contactForm{:name => "sentMessage", :novalidate => ""}
+        .row.control-group
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label Name
+            %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Name", :required => "", :type => "text"}/
+            %p.help-block.text-danger
+        .row.control-group
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label Email Address
+            %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Email Address", :required => "", :type => "email"}/
+            %p.help-block.text-danger
+        .row.control-group
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label Phone Number
+            %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Phone Number", :required => "", :type => "tel"}/
+            %p.help-block.text-danger
+        .row.control-group
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label Message
+            %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Message", :required => "", :rows => "5"}
+            %p.help-block.text-danger
+        %br/
+        #success
         .row
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-            .page-heading
-              %h1 Contact Me
-              %hr.small/
-              %span.subheading Have questions? I have answers (maybe).
-    / Main Content
-    .container
-      .row
-        .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-          %p Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!
-          / Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work.
-          / WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address!
-          / NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally!
-          %form#contactForm{:name => "sentMessage", :novalidate => ""}
-            .row.control-group
-              .form-group.col-xs-12.floating-label-form-group.controls
-                %label Name
-                %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Name", :required => "", :type => "text"}/
-                %p.help-block.text-danger
-            .row.control-group
-              .form-group.col-xs-12.floating-label-form-group.controls
-                %label Email Address
-                %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Email Address", :required => "", :type => "email"}/
-                %p.help-block.text-danger
-            .row.control-group
-              .form-group.col-xs-12.floating-label-form-group.controls
-                %label Phone Number
-                %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Phone Number", :required => "", :type => "tel"}/
-                %p.help-block.text-danger
-            .row.control-group
-              .form-group.col-xs-12.floating-label-form-group.controls
-                %label Message
-                %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Message", :required => "", :rows => "5"}
-                %p.help-block.text-danger
-            %br/
-            #success
-            .row
-              .form-group.col-xs-12
-                %button.btn.btn-default{:type => "submit"} Send
-    %hr/
-    / Footer
-    %footer
-      .container
-        .row
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-            %ul.list-inline.text-center
-              %li
-                %a{:href => "#"}
-                  %span.fa-stack.fa-lg
-                    %i.fa.fa-circle.fa-stack-2x
-                    %i.fa.fa-twitter.fa-stack-1x.fa-inverse
-              %li
-                %a{:href => "#"}
-                  %span.fa-stack.fa-lg
-                    %i.fa.fa-circle.fa-stack-2x
-                    %i.fa.fa-facebook.fa-stack-1x.fa-inverse
-              %li
-                %a{:href => "#"}
-                  %span.fa-stack.fa-lg
-                    %i.fa.fa-circle.fa-stack-2x
-                    %i.fa.fa-github.fa-stack-1x.fa-inverse
-            %p.copyright.text-muted Copyright © Your Website 2014
-    / jQuery
-    %script{:src => "js/jquery.js"}
-    / Bootstrap Core JavaScript
-    %script{:src => "js/bootstrap.min.js"}
-    / Custom Theme JavaScript
-    %script{:src => "js/clean-blog.min.js"}
+          .form-group.col-xs-12
+            %button.btn.btn-default{:type => "submit"} Send
+%hr/
