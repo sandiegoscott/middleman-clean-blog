@@ -1,10 +1,8 @@
 ---
 title: Failure is not an option
 date: 2014-07-08 01:32 UTC
-author: scott
+author: start
 tags:
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare eu lorem sed bibendum. Aliquam tincidunt ligula enim, quis tincidunt magna blandit non. Phasellus consectetur urna in leo laoreet pellentesque. Duis augue metus, laoreet vitae velit eget, porttitor tincidunt est. Sed cursus velit neque, et ultrices tellus ullamcorper sed. Sed pretium mi lacus, sed euismod ligula aliquam sed. Cras non turpis ex. Phasellus placerat facilisis turpis, et facilisis ex vestibulum ut. Integer sodales, tellus quis malesuada euismod, metus neque viverra nisi, sit amet viverra nunc nisi at augue. Integer sem urna, tincidunt non enim vitae, vulputate tincidunt arcu.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare eu lorem sed bibendum. Aliquam tincidunt ligula enim, quis tincidunt magna blandit non. Phasellus consectetur urna in leo laoreet pellentesque. Duis augue metus, laoreet vitae velit eget, porttitor tincidunt est. Sed cursus velit neque, et ultrices tellus ullamcorper sed. Sed pretium mi lacus, sed euismod ligula aliquam sed. Cras non turpis ex. Phasellus placerat facilisis turpis, et facilisis ex vestibulum ut. Integer sodales, tellus quis malesuada euismod, metus neque viverra nisi, sit amet viverra nunc nisi at augue. Integer sem urna, tincidunt non enim vitae, vulputate tincidunt arcu.
+Many say exploration is part of our destiny, but it’s actually our duty to future generations.

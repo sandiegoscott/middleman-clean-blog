@@ -1,13 +1,12 @@
 !!!
-/[if IE 8] <html lang="en" class="ie8">
-/[if IE 9] <html lang="en" class="ie9">
-/ [if !IE]><!
 %html{:lang => "en"}
-  / <![endif]
+  /
   %head
     = partial "partial/head"
+  /
   %body
     = partial "partial/navigation"
+    /
     = yield
     %hr/
     = partial "partial/footer"

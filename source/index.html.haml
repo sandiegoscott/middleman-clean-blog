@@ -1,3 +1,5 @@
+/ Page Header
+/ Set your background image for this header on the line below.
 %header.intro-header{:style => "background-image: url('img/home-bg.jpg')"}
   .container
     .row
@@ -6,19 +8,20 @@
           %h1 Clean Blog
           %hr.small/
           %span.subheading A Clean Blog Theme by Start Bootstrap
+/
+/ Main Content
 .container
   .row
     .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
       - page_articles.each_with_index do |article, i|
         - author = find_author(article.data.author)
         .post-preview
-          %h2.post-title
-            = link_to(article.title, article)
           %a{:href => article}
             %h2.post-title
               = article.title
             %h3.post-subtitle
-              = article.summary(250)
+              / strip off paragraph tag that Clean Blog doesn't expect
+              = article.summary(100).gsub(/\<p\>/, "").gsub(/\<\/p\>/, "")
           %p.post-meta
             Posted by
             %a{:href => "#"}
