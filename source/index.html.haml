@@ -16,7 +16,7 @@
       - page_articles.each_with_index do |article, i|
         - author = find_author(article.data.author)
         .post-preview
-          %a{:href => article}
+          %a{:href => article.path}
             %h2.post-title
               = article.title
             %h3.post-subtitle

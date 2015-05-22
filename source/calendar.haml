@@ -33,9 +33,8 @@ pageable: true
                   by
                   %a{:href => "#"} Scott Olmsted
               %a.read-more
-                = link_to('Read more', article)
+                = link_to('Read more', article.path)
                 %i.fa.fa-long-arrow-right
       - if paginate
         - if next_page
           %p= link_to 'Next page', next_page
-    = partial "blog_aside"
