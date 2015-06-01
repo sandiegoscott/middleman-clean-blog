@@ -2,28 +2,25 @@
 # the following line to use "https"
 source 'https://rubygems.org'
 
-gem "middleman", "~> 3.2.2"
-gem "middleman-blog", "~> 3.5.1"
-#gem "middleman-target", "~> 0.0.6"
-#gem "middleman-deploy", "~> 0.1.4"
+gem "middleman"
+gem "middleman-blog"
+gem 'middleman-protect-emails'
+gem 'middleman-pry'
 
 # Live-reloading plugin
 #gem "middleman-livereload", "~> 3.1.0"
-
-# For Slim
-#gem "slim"
 
 # For HAML
 gem "html2haml"
 
 # For Markdown
-gem "redcarpet", "~> 3.1.1"
+gem "redcarpet"
 
 # For blog summary
 gem "nokogiri", "~> 1.6.1"
 
 # For feed.xml.builder/sitemap.xml.builder
-gem "builder", "~> 3.0"
+gem "builder" # , "~> 3.0"
 
 # for debugging
 gem "pry"

@@ -25,3 +25,6 @@
 
 # ignore scratch file
 scratch.*
+
+# ignore rvm file
+.ruby*
