@@ -21,6 +21,3 @@ gem "nokogiri", "~> 1.6.1"
 
 # For feed.xml.builder/sitemap.xml.builder
 gem "builder" # , "~> 3.0"
-
-# for debugging
-gem "pry"
